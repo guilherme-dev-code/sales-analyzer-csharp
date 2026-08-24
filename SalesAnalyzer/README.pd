@@ -1,0 +1,389 @@
+# 📊 SalesAnalyzer
+
+SalesAnalyzer is a console-based sales management and analytics system developed in **C#**.
+
+The project was built to demonstrate practical knowledge of **Object-Oriented Programming**, **Generics**, **Collections**, **LINQ**, **Repository Pattern**, **File Processing**, and **Software Architecture** while simulating a real-world sales analysis environment.
+
+---
+
+# 📖 About the Project
+
+SalesAnalyzer allows users to manage companies, branches, imported sales files, products, and reports.
+
+The application supports importing sales data from CSV and Excel files, storing and processing information, and generating analytical reports based on the imported data.
+
+Although functional from a business perspective, the primary purpose of this project is educational and portfolio-oriented, focusing on showcasing software development concepts and best practices using C# and .NET.
+
+---
+
+# 🎯 Learning Objectives
+
+This project was developed to practice and demonstrate knowledge of:
+
+- Object-Oriented Programming (OOP)
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+- Abstract Classes
+- Interfaces
+- Generics
+- Collections
+- Dictionary<TKey, TValue>
+- LINQ
+- Exception Handling
+- Repository Pattern
+- Layered Architecture
+- Data Import Processing
+- File Manipulation
+- Software Design Principles
+- Code Organization and Maintainability
+
+---
+
+# 🚀 Features
+
+## Enterprise Management
+
+- Register an enterprise
+- View enterprise information
+
+## Branch Management
+
+- Register branches
+- Remove branches
+- Search branch by ID
+- Search branch by name
+- List all branches
+
+## Import Management
+
+- Import CSV files
+- Import TXT files
+- Import Excel files (.xlsx)
+- Validate imported data
+- Remove imported files
+
+## Sales Management
+
+- List sales
+- Search sales by ID
+- View sale details
+- Remove sales
+
+## Reporting
+
+- Sales Report
+- Product Report
+- Category Report
+- Financial Report
+- Product Ranking
+
+---
+
+# 🏗️ Technologies Used
+
+- C#
+- .NET
+- LINQ
+- ClosedXML
+- Windows Forms (OpenFileDialog)
+- Git
+- GitHub
+
+---
+
+# 🧠 Technical Concepts Demonstrated
+
+## Object-Oriented Programming
+
+The project makes extensive use of OOP principles:
+
+### Encapsulation
+
+Business rules and validations are protected inside entities and services.
+
+### Inheritance
+
+Specialized product types inherit from a common base class:
+
+```csharp
+Product
+```
+
+Derived classes:
+
+```csharp
+ElectronicProduct
+FurnitureProduct
+PeripheralProduct
+```
+
+### Polymorphism
+
+Product behavior is customized through method overriding, allowing different product types to implement specific business logic.
+
+### Abstraction
+
+Abstract classes are used to represent shared behaviors and characteristics among products.
+
+---
+
+## Generics
+
+A generic repository was implemented:
+
+```csharp
+RepositoryService<T>
+```
+
+This allows reusable logic to be applied to different data types while maintaining type safety.
+
+---
+
+## Collections
+
+The project uses:
+
+```csharp
+List<T>
+Dictionary<TKey, TValue>
+```
+
+to store, organize, and process information efficiently.
+
+---
+
+## LINQ
+
+LINQ was used to perform:
+
+- Grouping operations
+- Data filtering
+- Aggregations
+- Analytics
+- Statistical processing
+- Report generation
+- Product ranking
+
+---
+
+## Repository Pattern
+
+A generic repository layer was created to centralize data manipulation and promote code reuse.
+
+Benefits include:
+
+- Reusability
+- Separation of concerns
+- Maintainability
+- Cleaner business logic
+
+---
+
+## Exception Handling
+
+Custom exceptions were created to enforce business rules and improve error handling.
+
+Examples:
+
+```csharp
+EnterpriseException
+BranchException
+SaleException
+ProductException
+CsvImportServiceException
+ExcelImportServiceException
+FileImportServiceException
+```
+
+---
+
+## Interfaces and Strategy Pattern
+
+The application uses the following interface:
+
+```csharp
+IImportService
+```
+
+which allows different import implementations:
+
+```csharp
+CsvImportService
+ExcelImportService
+```
+
+This approach follows the Strategy Pattern and makes the system easier to extend.
+
+---
+
+# 📁 Project Structure
+
+```text
+SalesAnalyzer
+│
+├── Entities
+│   ├── Enums
+│   └── Exceptions
+│
+├── Menus
+│   ├── EnterpriseMenu
+│   ├── BranchMenu
+│   ├── ImportMenu
+│   ├── SaleMenu
+│   └── ReportMenu
+│
+├── Services
+│   ├── Interfaces
+│   └── Exceptions
+│
+├── Utils
+│
+├── ApplicationContext.cs
+│
+└── Program.cs
+```
+
+---
+
+# 📄 Supported File Formats
+
+The application supports importing:
+
+- CSV
+- TXT
+- XLSX
+
+Expected structure:
+
+```text
+SALE_ID;
+SALE_DATE;
+PRODUCT_NAME;
+PRODUCT_CATEGORY;
+PRODUCT_PRICE;
+PRODUCT_QUANTITY;
+CATEGORY_SPECIFIC_VALUE
+```
+
+Example:
+
+```csv
+1;10/08/2025;DELL G15 NOTEBOOK;ELECTRONIC;4500.00;1;12
+1;10/08/2025;RGB GAMING MOUSE;PERIPHERAL;150.00;2;USB
+1;10/08/2025;OFFICE CHAIR;FURNITURE;850.00;1;LEATHER
+```
+
+Supported categories:
+
+```text
+ELECTRONIC
+FURNITURE
+PERIPHERAL
+```
+
+---
+
+# ▶️ Getting Started
+
+## Prerequisites
+
+- .NET SDK 10.0 or later
+- Windows Operating System
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/guilherme-dev-code/sales-analyzer-csharp.git
+```
+
+---
+
+## Navigate to the Project
+
+```bash
+cd sales-analyzer-csharp
+```
+
+---
+
+## Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+---
+
+## Run the Application
+
+```bash
+dotnet run
+```
+
+---
+
+# ⚠️ Important
+
+This project is a **Console Application**.
+
+All user interaction happens through the terminal.
+
+The application does not provide a complete graphical user interface because the main goal of the project is to demonstrate:
+
+- Object-Oriented Programming
+- Generics
+- LINQ
+- Collections
+- Repository Pattern
+- File Processing
+- Exception Handling
+- Software Architecture
+- Code Organization
+
+The focus is on software engineering concepts rather than user interface design.
+
+---
+
+# 💻 Example
+
+Main Menu:
+
+```text
+SALES ANALYZER
+
+1 - ENTERPRISE
+2 - BRANCHES
+3 - IMPORT SALES
+4 - SALES
+5 - REPORTS
+0 - EXIT
+```
+
+Reports Menu:
+
+```text
+1 - Sales Report
+2 - Product Report
+3 - Category Report
+4 - Financial Report
+5 - Product Ranking
+```
+
+---
+
+# 👨‍💻 Author
+
+**Guilherme Da Silva Ribeiro**
+
+Junior Systems Analyst
+
+GitHub:
+https://github.com/guilherme-dev-code
+
+---
+
+⭐ Developed to demonstrate practical knowledge of C#, Object-Oriented Programming, Generics, Collections, LINQ, File Processing, and Software Architecture.
